@@ -1,0 +1,154 @@
+bg-color = #fafafa
+header-bg-color = #f5f5f5
+header-border-color = #d5d5d5
+header-color = #383838
+main-color = #737272
+link-color = header-color
+link-hover-color = #737272
+footer-bg-color = #383838
+heart-color = #B40300
+hello-color = #218988
+header-font-family = 'Volkhov', 'Times New Roman', serif
+main-font-family = 'PT Sans', 'Arial', sans-serif
+alt-font-family = 'Martel', 'Times New Roman', serif
+
+header-width = 1000px
+content-width = 920px
+
+*
+  font-family: main-font-family
+
+body
+  background-color: bg-colo
+    
+h1,h2,h3
+  font-family: header-font-family
+  font-weight: normal
+
+h1, h2, h3, h4, p
+  margin: 0px
+  margin-bottom: 20px
+
+.BootstrapList-header
+  background-color: header-bg-color
+  color: header-color
+  margin-bottom: 30px
+  border: 1px dashed header-border-color
+
+  .BootstrapList-header-content
+    max-width: header-width
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    
+    h1
+      width: 400px
+      padding: 20px
+      
+
+    .BootstrapList-links
+      padding-top: 30px
+      text-align: center
+
+      a
+        padding: 10px
+        color: link-color
+        text-decoration: none
+
+        &:hover
+          color: link-hover-color
+
+        &.active
+          text-decoration: underline 
+
+.BootstrapList-about
+  p
+    font-family: alt-font-family
+    font-weight: 100
+
+.BootstrapList-async, 
+.BootstrapList-about, 
+.BootstrapList-addCompany,
+.BootstrapList-home
+  width: content-width
+  margin: 0 auto
+  padding-bottom: 60px
+
+.BootstrapList-async
+  text-align: center
+  min-height: 30px
+
+  .BootstrapList-async-error
+    color: #EE5656
+    font-weight: bold
+
+.BootstrapList-home
+  .welcome
+    font-family: alt-font-family
+
+.BootstrapList-subscriptionForm-container
+  margin-top: 20px
+
+.BootstrapList-companyForm, .BootstrapList-subscriptionForm
+  form
+    text-align: center
+    
+  label
+    margin-left: 10px
+    color: link-hover-color
+  
+  input, button, label, textarea
+    margin-right: 6px
+
+  input[type=text], input[type=email], textarea
+    padding: 10px
+    float: right
+    border: solid 1px link-hover-color
+    background-color: #fff
+    color: header-color
+    appearance: none
+    box-shadow: none
+    transition: box-shadow 0.5s
+    width: 300px
+    
+    &:focus, &.focus
+      box-shadow: 0 0 5px 1px header-color
+      border: solid 1px header-color
+
+    &::-webkit-input-placeholder
+      color: link-hover-color
+  
+  textarea
+    width: 400px
+    height: 75px
+
+  button
+    float: right
+    background-color: hello-color
+    color: #fff
+
+
+footer
+  padding: 20px 0
+  font-size: 14px
+  color: #999
+  background-color: footer-bg-color
+  position: fixed
+  left: 0
+  bottom: 0
+  width: 100%
+  margin-top: 20px
+  
+  .heart
+    color: heart-color
+  
+  img
+    height: 22px
+    margin: -7px 0
+  
+  .hello
+    color: hello-color
+  
+  p
+    text-align: center
+    margin: 0
