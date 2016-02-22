@@ -1,28 +1,5 @@
-## 3REE
-[![Circle CI](https://circleci.com/gh/GordyD/3ree.svg?style=svg)](https://circleci.com/gh/GordyD/3ree)
-
-An example universal JS application written with the 3REE stack, *Re*act + *Re*dux + *Re*thinkDB + *E*xpress. A stack for building apps, front and back end, with just Javascript.
-
-This project was initially conceived to experiment with using these technologies in conjunction with one-another. I have written a [blog](http://blog.workshape.io/the-3ree-stack-react-redux-rethinkdb-express-js/) that relates to this codebase.
-
-![Screenshot](http://i.imgur.com/RiFteKV.png)
-
-This project is useful for:
- - seeing how to build a Universal Javascript application
- - understanding how to handle asyncronousity in Redux action creators
- - seeing how you can use Socket.io with Redux
- - building your own Redux powered application
- - forking so that you can build your own 3REE stack app!
-
-### Main Features
-
- - Universal (Isomorphic) Javascript
- - Asyncronous Redux actions example
- - Use of RethinkDB Changefeeds for realtime updates reflected in the UI
-
-### Demo
-
-There is a demo app hosted at [3ree-demo.workshape.io](http://3ree-demo.workshape.io). Check it out. If it is down, please email me at gordon@workshape.io
+## BootstrapList
+[![Circle CI](https://circleci.com/gh/Workshape/bootstraplist.svg?style=svg)](https://circleci.com/gh/Workshape/bootstraplist)
 
 ### Setup
 
