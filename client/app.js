@@ -2,10 +2,10 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import { Router, Route } from 'react-router';
 
-import routes from '../universal/routes';
-import store from '../universal/store';
-import * as actions from '../universal/actions';
-import Root from '../universal/containers/root';
+import routes from '../app/routes';
+import store from '../app/store';
+import * as actions from '../app/actions';
+import Root from '../app/containers/root';
 
 import { setupRealtime } from './Realtime';
 

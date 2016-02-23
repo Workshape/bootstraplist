@@ -3,13 +3,18 @@ import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { RouterContext, match } from 'react-router';
 
-import * as subscriptionService from './api/service/subscription';
-import configureStore from '../universal/store';
-import routes from '../universal/routes';
-import DevTools from '../universal/containers/devTools';
+import * as subscriptionService from '../api/service/subscription';
+import configureStore from '../../app/store';
+import routes from '../../app/routes';
+import DevTools from '../../app/containers/devTools';
 
 const isDev = (process.env.NODE_ENV !== 'production');
 
+/*
+ * Server
+ *
+ * Configures and starts Express server
+ */
 export function handleRender(req, res) {
   console.log(' [x] Request for', req.url);
   subscriptionService.getSubscriptions()
@@ -33,7 +38,7 @@ export function handleRender(req, res) {
         return;
       }
 
-      const devTools = (isDev) ? <DevTools /> : null;
+      const devTools = isDev ? <DevTools /> : null;
 
       // Render the component to a string
       const html = ReactDOMServer.renderToString(

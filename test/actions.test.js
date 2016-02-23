@@ -2,16 +2,10 @@
 /* global it */
 /* global afterEach */
 
-import sinon from 'sinon';
-import chai from 'chai';
+import { expect } from 'chai';
 
-var expect = chai.expect;
-
-import configureStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-
-import * as actions from '../universal/actions/index.js';
-import * as types from '../universal/constants/ActionTypes';
+import * as actions from '../app/actions/index.js';
+import * as types from '../app/constants/ActionTypes';
 
 describe('Actions', () => {
   afterEach(function() {

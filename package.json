@@ -1,26 +1,21 @@
 {
-  "name": "pulse",
+  "name": "bootstrap-list",
   "version": "1.0.0",
-  "description": "An example universal JS application written with the 3REE stack, React + Redux + RethinkDB + Express.",
-  "main": "server.babel.js",
+  "description": "List of BootstrapCompanies",
+  "main": "server/run.js",
   "scripts": {
     "build:prod": "NODE_ENV=production webpack",
-    "db-setup": "node dbSetup.babel.js",
-    "lint": "eslint client server universal test server.js dbSetup.js",
-    "start": "NODE_ENV=development node server.babel.js & node server.webpack.js",
-    "start:prod": "NODE_ENV=production node server.babel.js",
+    "db-setup": "babel-node db-setup.babel.js",
+    "lint": "eslint client server universal test server.js db-setup.js",
+    "start": "NODE_ENV=development babel-node server/index.js & babel-node webpack/server.js",
+    "start:prod": "NODE_ENV=production babel-node server/index.js",
     "test": "./node_modules/karma/bin/karma start",
     "test-watch": "./node_modules/karma/bin/karma start --no-single-run"
   },
-  "keywords": [
-    "react",
-    "3ree",
-    "rethinkdb",
-    "redux",
-    "webpack"
-  ],
+  "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "babel-cli": "^6.5.1",
     "babel-core": "6.4.0",
     "babel-polyfill": "^6.3.14",
     "babel-runtime": "^6.3.19",
@@ -83,7 +78,6 @@
     "redux-devtools": "3.0.1",
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.2",
-    "redux-mock-store": "0.0.6",
     "style-loader": "0.13.0",
     "stylus": "^0.53.0",
     "stylus-loader": "^1.5.1",

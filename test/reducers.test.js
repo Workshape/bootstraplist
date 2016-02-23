@@ -1,16 +1,14 @@
-/* global describe */
-/* global it */
-/* global afterEach */
+/* jshint expr: true */
+/* global describe, it */
 
 import 'babel-polyfill'; // For use of Object.assign
 
-import sinon from 'sinon';
 import chai from 'chai';
 
 var expect = chai.expect;
 
-import reducer from '../universal/reducers';
-import * as actions from '../universal/actions/index.js';
+import reducer from '../app/reducers';
+import * as actions from '../app/actions/index.js';
 
 describe('Reducers', () => {
 
@@ -19,13 +17,12 @@ describe('Reducers', () => {
    */
   describe('incrementSubscriptionCount', () => {
     it('should increment subscription count by 1', () => {
-      let initialStateForTest = { subscriptionCount: 3 };
-
-      let action = actions.incrementSubscriptionCount();
+      let initialStateForTest = { subscriptionCount: 3 },
+        action = actions.incrementSubscriptionCount();
 
       expect(initialStateForTest.subscriptionCount).to.equal(3);
 
-      let state = reducer(initialStateForTest, action);
+      reducer(initialStateForTest, action);
       expect(initialStateForTest.subscriptionCount).to.equal(4);
     });
   });

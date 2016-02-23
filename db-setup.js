@@ -1,9 +1,16 @@
 import r from 'rethinkdb';
 import config from 'config';
 
+/*
+ * DB Setup
+ *
+ * Setup DB tables for this application
+ */
+
 const rethinkdb = config.get('rethinkdb');
-let DATABASE = rethinkdb.db || 'bootstrap';
-let TABLES = ['companies', 'emails']; 
+
+let DATABASE = rethinkdb.db || 'bootstrap',
+  TABLES = ['companies', 'emails']; 
 
 r.connect(rethinkdb)
 .then(conn => {

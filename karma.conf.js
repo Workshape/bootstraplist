@@ -1,33 +1,36 @@
 var webpackConfig = require('./webpack.config.js');
 
+/*
+ * Karma config
+ *
+ * Configuration file for test runner
+ */
+
 module.exports = function (config) {
   config.set({
-    browsers: [ 'PhantomJS' ],
-    captureTimeout: 60000,
-    browserNoActivityTimeout: 60000, // We need to accept that Webpack may take a while to build!
-    singleRun: true,
-    colors: true,
-    frameworks: [ 'mocha', 'sinon', 'chai' ], // Mocha is our testing framework of choice
-    files: [
-      'tests.webpack.js'
+    browsers                 : [ 'PhantomJS' ],
+    captureTimeout           : 60000,
+    browserNoActivityTimeout : 60000, // We need to accept that Webpack may take a while to build!
+    singleRun                : true,
+    colors                   : true,
+    frameworks               : [ 'mocha', 'chai' ], // Mocha is our testing framework of choice
+    files                    : [
+      'webpack/tests.js'
     ],
-    preprocessors: {
-      'tests.webpack.js': [ 'webpack' ] // Preprocess with webpack and our sourcemap loader
+    preprocessors : {
+      'webpack/tests.js' : [ 'webpack' ] // Preprocess with webpack and our sourcemap loader
     },
-    reporters: [ 'mocha' ],
-    webpack: { // Simplified Webpack configuration
-      module: {
-        loaders: webpackConfig.module.loaders,
-        noParse: [
-            /node_modules\/sinon/,
-        ]
+    reporters : [ 'mocha' ],
+    webpack   : { // Simplified Webpack configuration
+      module : {
+        loaders : webpackConfig.module.loaders
       },
-      node: {
-        fs: 'empty'
+      node : {
+        fs : 'empty'
       }
     },
-    webpackServer: {
-      noInfo: true // We don't want webpack output
+    webpackServer : {
+      noInfo : true // We don't want webpack output
     }
   });
 };
