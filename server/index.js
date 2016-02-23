@@ -1,3 +1,5 @@
+import './overrides';
+
 import path from 'path';
 import bodyParser from 'body-parser';
 import express from 'express';

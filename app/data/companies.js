@@ -1,24 +1,15 @@
-// const ids = [ 'dr-ed' ];
+const IDS = [ 'dr-ed' ];
 
-export default {
+function exportAll() {
+    var out = {};
 
-    // 'dr-ed': {
-    //     meta: require('./dr-ed/meta.json'),
-    //     description: require('./dr-ed/description.md'),
-    // }
+    IDS.map((id) => {
+        out[id] = require(`./${id}/meta.json`);
+        out[id].description = require(`./${id}/description.md`);
+        out[id].id = id;
+    });
 
-};
+    return out;
+}
 
-// function exportAll() {
-//     var out = {},
-//         id;
-
-//     for (id of ids) {
-//         out[id] = require(`./${id}/meta.json`);
-//         out[id].description = require(`./${id}/description.md`);
-//     }
-
-//     return out;
-// }
-
-// export default exportAll();
+export default exportAll();

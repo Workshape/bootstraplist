@@ -30,29 +30,29 @@ var entryScripts = [ APP_ENTRY ],
   ],
   loaders = [
     {
-      test    : /\.md?$/,
-      loaders : [ 'html', 'markdown' ],
+      test    : /\.md$/,
+      loaders: [ 'raw', 'markdown' ],
       include : __dirname
     },
     {
-      test    : /\.js?$/,
+      test    : /\.js$/,
       loaders : [ 'babel' ],
       exclude : /node_modules/,
       include : __dirname
     },
     {
-      test    : /\.json?$/,
+      test    : /\.json$/,
       loaders : [ 'json' ],
       include : __dirname,
       exclude : /node_modules/
     },
     {
-      test    : /\.css?$/,
+      test    : /\.css$/,
       loaders : [ ExtractTextPlugin.extract('style-loader', 'css-loader'), 'raw' ],
       include : __dirname
     },
     {
-      test    : /\.styl?$/,
+      test    : /\.styl$/,
       loader  : ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader'),
       include : __dirname
     },

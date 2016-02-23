@@ -1,13 +1,15 @@
 import React, { PropTypes, Component } from 'react';
 import companies from '../data/companies';
+import CompanyBox from './CompanyBox';
 
-export default class AsyncBar extends Component {
+export default class CompaniesList extends Component {
   
   render() {
-    console.log(companies);
-
     return (
       <ul className='companies-list'>
+        {Object.keys(companies).map((id) => {
+          return (<li><CompanyBox {...companies[id]} /></li>);
+        })}
       </ul>
     );
   }

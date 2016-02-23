@@ -33,6 +33,8 @@ class Home extends Component {
         <section className='sheet'>
           <div className='inner'>
 
+          <h2>Companies</h2>
+
           <CompaniesList />
 
           </div>
