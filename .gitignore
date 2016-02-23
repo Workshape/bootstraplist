@@ -4,3 +4,4 @@ build
 config/local.json
 config/production.json
 npm-debug.log
+**.DS_Store

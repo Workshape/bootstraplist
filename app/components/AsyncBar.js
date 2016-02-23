@@ -2,25 +2,25 @@ import React, { PropTypes, Component } from 'react';
 
 export default class AsyncBar extends Component {
   static propTypes = {
-    isWorking: PropTypes.bool,
-    error: PropTypes.string
+    isWorking : PropTypes.bool,
+    error     : PropTypes.string
   };
 
   render() {
-    let spinner = (this.props.isWorking) ? this.renderSpinner() : null;
-    let error = (this.props.error) ? this.renderError() : null;
+    let spinner = (this.props.isWorking) ? this.renderSpinner() : null,
+      error = (this.props.error) ? this.renderError() : null;
 
     return (
-      <section className='Pulse-async'>
+      <div>
         {spinner}
         {error}
-      </section>
+      </div>
     );
   }
 
   renderSpinner() {
     return (
-      <div className="Pulse-async-spinner">
+      <div className="spinner">
         Loading…
       </div>
     );
@@ -28,7 +28,7 @@ export default class AsyncBar extends Component {
 
   renderError() {
     return (
-      <p className="Pulse-async-error">
+      <p className="box error">
         {this.props.error}
       </p>
     );

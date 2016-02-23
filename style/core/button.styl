@@ -1,0 +1,16 @@
+button-color(bg-color = color-accent, text-color = color-white)
+    background bg-color
+    color text-color
+
+    &:hover:not(.disabled)
+        background lighten(bg-color, 15)
+
+button, .button, input[type='button'], input[type='submit']
+    border-radius()
+    button-color()
+    smooth-font(false)
+    font-size 14px
+    border 0
+    padding 10px 15px
+    font-family font-base
+    text-transform uppercase

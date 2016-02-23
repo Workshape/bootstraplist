@@ -1,0 +1,55 @@
+body
+    smooth-font(true)
+    font-family font-base
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, hr
+    vertical-rhythm()
+
+h1, h2, h3, h4, h5, h6
+    font-family font-heading
+    font-weight 400
+
+    &.sub
+        font-size 20px
+        opacity .6
+
+h4, h5, h6
+
+.center
+    text-align center
+
+i
+    position relative
+    display inline-block
+
+a
+    cursor pointer
+    color color-brand
+    text-decoration none
+
+&:focus
+    outline 0
+
+hr
+    border 0
+    background rgba(color-black, .1)
+    height 1px
+    position relative
+
+h1
+    font-size 40px
+
+h2
+    font-size 35px
+
+h3
+    font-size 25px
+
+h4
+    font-size 20px
+
+h5
+    font-size 15px
+
+h6
+    font-size 10px

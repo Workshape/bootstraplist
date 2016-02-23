@@ -1,0 +1,63 @@
+page-width()
+    max-width page-size
+    margin-left auto
+    margin-right @margin-left
+
+debullet()
+    margin-left 0
+    margin-right 0
+    padding 0
+    list-style none
+
+border-radius(rad = 3px)
+    border-radius rad
+
+smooth-font(state = null)
+
+    if (state == false)
+        font-smoothing subpixel-antialiased
+        -moz-osx-font-smoothing auto
+    else
+        font-smoothing antialiased
+        -moz-osx-font-smoothing grayscale
+
+bg-image(image-name, size = false, position = false, repeat = false, ext = 'png')
+    background-image: url(assets-dir + image-name + '.' + ext)
+
+    if size
+        background-size: size
+
+    if position
+        background-position: position
+
+    if repeat
+        background-repeat: repeat
+
+    if ext != 'svg'
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5)
+            background-image: url(assets-dir + image-name + '@2x.' + ext + '?v-' + cacheId)
+
+noselect()
+    -webkit-touch-callout none
+    -webkit-user-select none
+    -khtml-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+
+subtle-shadow(multiplier = 1)
+    box-shadow rgba(0, 0, 0, .1 * multiplier) 0 2px 2px 0
+
+subtle-text-shadow(multiplier = 1)
+    text-shadow rgba(0, 0, 0, .5 * multiplier) 0 1px 2px
+
+blur-filter(amt)
+    -webkit-filter blur(amt)
+    filter blur(amt)
+
+vertical-rhythm(dist = 20px)
+    margin-top 0
+    margin-bottom dist
+
+    &:last-child
+        margin-bottom 0

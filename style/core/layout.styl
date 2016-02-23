@@ -1,0 +1,138 @@
+body
+    background color-bg
+    color color-black
+    text-align center
+    padding 0
+    margin 0
+    padding-top 70px
+
+.row
+    grid-system()
+
+header
+    clearfix()
+    subtle-shadow(2)
+    padding 20px
+    background color-white
+    position fixed
+    z-index 1
+    width 100%
+    left 0
+    top 0
+
+    .logo
+        float left
+        display block
+        text-transform uppercase
+        color #222
+        letter-spacing 2px
+        font-weight 700
+        font-size 16px
+        line-height 28px
+        padding-left 30px
+        background-image url('/assets/logos/bootstrap-list.svg')
+        background-size auto 90%
+        background-repeat no-repeat
+        background-position left center
+
+    .inner
+        page-width()
+
+    ul.nav
+        debullet()
+        float right
+        line-height 20px
+
+        li
+            display inline-block
+
+        a
+            display inline-block
+            color color-gray-darker
+            padding 5px 20px
+            transition color .2s
+            
+            &:hover
+                color mix(color-brand-dark, color-black)
+
+            &.active
+                color color-brand-dark
+
+        &:last-child a
+            padding-right 0
+
+$section-reverse-text
+
+    &, h1, h2, h3, h4, h5, h6
+        color color-white
+
+section
+    padding 120px 0
+    margin-bottom 20px
+
+    .inner
+        page-width()
+
+    &.heading
+        @extends $section-reverse-text
+        subtle-shadow()
+        background color-black
+        position relative
+        overflow hidden
+        margin-bottom -20px
+
+        .inner
+            position relative
+
+        &:before
+            blur-filter(5px)
+            background-size cover
+            background-position center center
+            position absolute
+            left 0
+            top 0
+            width 100%
+            height 100%
+            content ''
+            padding 20px
+            margin -20px
+            opacity 1.5
+            mix-blend-mode overlay
+
+        h1, h2, h3
+            subtle-text-shadow(2)
+
+    &.soil:before
+        background-image url('/assets/photos/soil.png')
+
+    &.brand
+        @extends $section-reverse-text
+        background-color color-brand
+
+        h1, h2, h3
+            subtle-text-shadow(.3)
+
+    &.sheet
+        margin auto
+        padding 0
+
+        .inner
+            subtle-shadow()
+            background color-white
+            padding 50px
+            position relative
+
+footer
+    page-width()
+    width 100%
+    margin-top 30px
+    border-top 1px solid color-ruler
+    padding 30px
+    font-size 12px
+
+    .heart
+        color color-red
+
+    img
+        height 20px
+        margin -6px 0

@@ -3,17 +3,17 @@ import { VALUE_CLASSES } from '../constants/ActionTypes.js';
 
 export default class CompanyForm extends Component {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-    editing: PropTypes.bool
+    onSubmit : PropTypes.func.isRequired,
+    editing  : PropTypes.bool
   };
 
   constructor(props, context) {
     super(props, context);
     this.state = {
-      errors: [],
-      name: this.props.name || '',
-      website: this.props.website || '',
-      about: this.props.about || ''
+      errors  : [],
+      name    : this.props.name || '',
+      website : this.props.website || '',
+      about   : this.props.about || ''
     };
   }
 
@@ -49,25 +49,36 @@ export default class CompanyForm extends Component {
   }
 
   render() {
-    let self = this;
-    let saveText = (this.props.editing) ? 'Save' : 'Add';
+    let self = this,
+      saveText = this.props.editing ? 'Save' : 'Apply';
 
     return (
       <form className='BootstrapList-companyForm pure-form'>
+
         <fieldset>
-          <label htmlFor='name'>Company Name</label>
-          <input type='text' id='name' placeholder='e.g. Workshape.io' autoFocus='true' value={this.state.name} onChange={::this.handleFieldChange('name')} />
+
+          <div className='field'>
+            <label className='inline' htmlFor='name'>Company Name</label>
+            <input type='text' id='name' placeholder='e.g. Workshape.io' autoFocus='true' value={this.state.name} onChange={::this.handleFieldChange('name')} />
+          </div>
+
+          <div className='field'>
+            <label className='inline' htmlFor='website'>Website</label>
+            <input type='text' id='website' placeholder='e.g. www.workshape.io' value={this.state.website} onChange={::this.handleFieldChange('website')} />
+          </div>
+
+          <div className='field'>
+            <label className='inline' htmlFor='about'>One liner</label>
+            <textarea id='about' placeholder='e.g. Workshape.io is a hiring platform.' onChange={::this.handleFieldChange('about')}>{this.state.about}</textarea>
+          </div>
+
         </fieldset>
         <fieldset>
-          <label htmlFor='website'>Website</label>
-          <input type='text' id='website' placeholder='e.g. www.workshape.io' value={this.state.website} onChange={::this.handleFieldChange('website')} />
-        </fieldset>
-        <fieldset>
-          <label htmlFor='about'>One liner</label>
-          <textarea id='about' placeholder='e.g. Workshape.io is a hiring platform.' onChange={::this.handleFieldChange('about')}>{this.state.about}</textarea>
-        </fieldset>
-        <fieldset>
-          <button type='submit' className='save pure-button' onClick={::this.handleSubmit}>{saveText}</button>
+
+          <div className='field'>
+            <button type='submit' className='save pure-button' onClick={::this.handleSubmit}>{saveText}</button>
+          </div>
+
         </fieldset>
       </form>
     );

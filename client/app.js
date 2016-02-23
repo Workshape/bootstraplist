@@ -9,9 +9,7 @@ import Root from '../app/containers/root';
 
 import { setupRealtime } from './Realtime';
 
-import '../style/pure.css';
-import '../style/main.styl';
-import '../style/spinner.styl';
+import '../style/index.styl';
 
 /**
  * Render the page

@@ -24,14 +24,11 @@ var io = socketIO(httpServer);
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
- // Server middleware
-app.use(require('serve-static')(path.join(__dirname, config.get('buildDirectory'))));
+// Server middleware
+app.use(require('serve-static')(path.join(__dirname, '../', config.get('buildDirectory'))));
+app.use(require('serve-static')(path.join(__dirname, '../static')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-// Static Resources
-app.get('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, 'images', 'favicon.ico')));
-app.get('/ws-logo.svg', (req, res) => res.sendFile(path.join(__dirname, 'images', 'ws-logo.svg')));
 
 // API Endpoints
 app.post('/api/0/subscriptions', api.addSubscription);

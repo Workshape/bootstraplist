@@ -5,38 +5,40 @@ import AsyncBar from './AsyncBar';
 
 export default class SubscriptionForm extends Component {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-    subscribed: PropTypes.bool.isRequired,
-    error: PropTypes.string,
-    isWorking: PropTypes.bool
+    onSubmit   : PropTypes.func.isRequired,
+    subscribed : PropTypes.bool.isRequired,
+    error      : PropTypes.string,
+    isWorking  : PropTypes.bool
   };
 
   constructor(props, context) {
     super(props, context);
+
     this.state = {
-      errors: [],
-      name: this.props.name || '',
-      email: this.props.email || ''
+      errors : [],
+      name   : this.props.name || '',
+      email  : this.props.email || ''
     };
   }
 
   handleSubmit(e) {
-    let errors;
+    let errors = [];
+
     e.preventDefault();
 
     if (this.state.name.length === 0) {
-      errors = ['You have not told us your name!'];
+      errors = [ 'Name missing' ];
     }
 
     if (this.state.email.length === 0) {
-      errors = [ ...errors, 'You have not given us us your email!'];
+      errors = [ ...errors, 'Email missing'];
     }
 
-    if (errors && errors.length > 0) {
+    if (errors && errors.length) {
       this.setState({errors: errors});
     } else {
       this.props.onSubmit({name: this.state.name, email: this.state.email});
-      this.setState({name: '', email: ''});
+      this.setState({ name: '', email: '' });
     }
   }
 
@@ -46,39 +48,66 @@ export default class SubscriptionForm extends Component {
     };
   }
 
-  render() {
-    let self = this;
-    let saveText = 'Subscribe';
-    let disabled = false;
-
+  getFormContent() {
     if (this.props.subscribed) {
       return (
-        <div className='BootstrapList-subscriptionForm-container'>
-          <h3>Thank you for subscribing</h3>
-          <p>We'll be in touch by the end of March with our first update!</p>
+        <div className='box success'>
+          Thank you. We'll be in touch by the end of March with our first update!
         </div>
-      );
-    } else {
-      return (
-        <div className='BootstrapList-subscriptionForm-container'>
-          <h3>Subscribe to Updates</h3>
-          <p>In the mean time, if you would like to be kept up to date with our latest new please enter your details below</p>
-          <form className='BootstrapList-subscriptionForm pure-form'>
-            <fieldset>
-              <label htmlFor='name'>Your Name</label>
-              <input type='text' id='name' placeholder='e.g. Frank Zappa' autoFocus='true' value={this.state.name} onChange={::this.handleFieldChange('name')} />
-            </fieldset>
-            <fieldset>
-              <label htmlFor='email'>Your Email</label>
-              <input type='email' id='email' placeholder='e.g. frank@zapping.io' value={this.state.email} onChange={::this.handleFieldChange('email')} />
-            </fieldset>
-            <fieldset>
-              <button type='submit' className='save pure-button' disabled={disabled} onClick={::this.handleSubmit}>{saveText}</button>
-              <AsyncBar {...this.props} />
-            </fieldset>
-          </form>
-        </div>
-      );
+        );
     }
+
+    return (
+      <form onSubmit={::this.handleSubmit}>
+
+        <fieldset>
+
+          <div className='field'>
+            <label className='inline' htmlFor='name'>Your Name</label>
+            <input type='text' id='name' placeholder='e.g. Frank Zappa' autoFocus='true' value={this.state.name} onChange={::this.handleFieldChange('name')} />
+          </div>
+
+          <div className='field'>
+            <label className='inline' htmlFor='email'>Your Email</label>
+            <input type='email' id='email' placeholder='e.g. frank@zapping.io' value={this.state.email} onChange={::this.handleFieldChange('email')} />
+          </div>
+
+        </fieldset>
+        <fieldset>
+
+          { this.state.errors.length ? (
+            <div className='box error'>
+              <ul>
+                {this.state.errors.map((error) => {
+                  return <li>{error}</li>;
+                })}
+              </ul>
+            </div>
+          ) : null }
+
+          <button type='submit' className='save pure-button'>Subscribe</button>
+
+          <AsyncBar {...this.props} />
+
+        </fieldset>
+
+      </form>
+    );
+  }
+
+  render() {
+    let formContent = this.getFormContent();
+
+    return (
+      <div>
+
+        <h2>Subscribe to Updates</h2>
+
+        <h3 className='sub'>Receive updates about these companies</h3>
+
+        {formContent}
+
+      </div>
+    );
   }
 }

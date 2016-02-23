@@ -38,7 +38,7 @@ export function handleRender(req, res) {
         return;
       }
 
-      const devTools = isDev ? <DevTools /> : null;
+      var devTools = isDev ? <DevTools /> : null;
 
       // Render the component to a string
       const html = ReactDOMServer.renderToString(

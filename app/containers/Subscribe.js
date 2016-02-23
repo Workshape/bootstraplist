@@ -21,7 +21,7 @@ class Subscribe extends Component {
   }
 }
 
-/**
+/*
  * Expose "Smart" Component that is connect-ed to Redux
  */
 export default connect(

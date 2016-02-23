@@ -1,0 +1,22 @@
+box-color(base-color = color-gray-light)
+    background-color mix(color-white, base-color, 80%)
+    border-left-color base-color
+    color mix(base-color, color-black, 50%)
+
+.box
+    box-color(color-gray-light)
+    vertical-rhythm()
+    padding 20px
+    border-left 3px solid
+
+    &.success
+        box-color(color-success)
+
+    &.error
+        box-color(color-danger)
+
+        ul
+            debullet()
+
+            li
+                vertical-rhythm()

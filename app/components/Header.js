@@ -5,13 +5,18 @@ export default class Header extends Component {
   render() {
     return (
       <div>
-        <header className='BootstrapList-header'>
-          <div className='BootstrapList-header-content'>
-            <h1>The Bootstrap List</h1>
-            <div className='BootstrapList-links'>
-              <IndexLink to='/' activeClassName='active'>Home</IndexLink>
+        <header>
+          <div className='inner'>
+
+            <Link className='logo' to='/'>
+              The Bootstrap List
+            </Link>
+
+            <ul className='nav'>
+              <IndexLink to='/' activeClassName='active'>Companies</IndexLink>
               <Link to='/add-company' activeClassName='active'>Add Company</Link>
-            </div>
+            </ul>
+
           </div>
         </header>
       </div>
