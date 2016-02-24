@@ -18,27 +18,33 @@ export default class CompanyForm extends Component {
   }
 
   handleSubmit(e) {
-    let errors;
+    let errors = [];
+
     e.preventDefault();
 
     if (this.state.name.length === 0) {
-      errors = ['You have not told us your company name!'];
+      errors.push('Company name missing');
     }
 
     if (this.state.website.length === 0) {
-      errors = ['You have not given us us your website!'];
+      errors.push('Website missing');
     }
 
     if (this.state.about.length === 0) {
-      errors = ['You have not told us about why you want to be listed!'];
+      errors.push('Description missing');
     }
 
 
     if (errors && errors.length > 0) {
-      this.setState({errors: errors});
+      this.setState({ errors });
     } else {
-      this.props.onSubmit({name: this.state.name, website: this.state.website, about: this.state.about});
-      this.setState({name: '', website: '', about: ''});
+      this.props.onSubmit({
+        name    : this.state.name,
+        website : this.state.website,
+        about   : this.state.about
+      });
+
+      this.setState({ name: '', website: '', about: '' });
     }
   }
 
@@ -74,6 +80,16 @@ export default class CompanyForm extends Component {
 
         </fieldset>
         <fieldset>
+
+          { this.state.errors.length ? (
+            <div className='box error'>
+              <ul>
+                {this.state.errors.map((error) => {
+                  return <li>{error}</li>;
+                })}
+              </ul>
+            </div>
+          ) : null }
 
           <div className='field'>
             <button type='submit' className='save pure-button' onClick={::this.handleSubmit}>{saveText}</button>

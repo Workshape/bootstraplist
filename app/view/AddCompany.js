@@ -8,7 +8,7 @@ import * as Actions from '../actions';
 class AddCompany extends Component {
 
   onSubmit(company) {
-      this.props.submitted = true;
+      this.setState({ submitted: true });
       this.render();
   }
 
@@ -46,7 +46,7 @@ class AddCompany extends Component {
   }
 
   getFormContent() {
-    if (this.props.submitted) {
+    if (this.state && this.state.submitted) {
       return <div className='box success'>Thank you</div>;
     }
 

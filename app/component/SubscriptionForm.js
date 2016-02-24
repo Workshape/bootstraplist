@@ -27,17 +27,21 @@ export default class SubscriptionForm extends Component {
     e.preventDefault();
 
     if (this.state.name.length === 0) {
-      errors = [ 'Name missing' ];
+      errors.push('Name missing');
     }
 
     if (this.state.email.length === 0) {
-      errors = [ ...errors, 'Email missing'];
+      errors.push('Email missing');
     }
 
     if (errors && errors.length) {
-      this.setState({errors: errors});
+      this.setState({ errors });
     } else {
-      this.props.onSubmit({name: this.state.name, email: this.state.email});
+      this.props.onSubmit({
+        name  : this.state.name,
+        email : this.state.email
+      });
+
       this.setState({ name: '', email: '' });
     }
   }
