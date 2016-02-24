@@ -1,6 +1,8 @@
 {
-    "name"     : "DrEd.com",
-    "url"      : "http://www.dred.com",
-    "industry" : "Health, Wellness and Fitness",
-    "size"     : "11-50 employees"
+    "name"      : "DrEd.com",
+    "url"       : "http://www.dred.com",
+    "industry"  : "Health, Wellness and Fitness",
+    "headline"  : "Better healthcare for all",
+    "size"      : "11-50 employees",
+    "locations" : [ "London" ]
 }

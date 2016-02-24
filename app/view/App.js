@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import AsyncBar from '../components/AsyncBar';
+import Header from '../component/Header';
+import Footer from '../component/Footer';
+import AsyncBar from '../component/AsyncBar';
 
 import * as Actions from '../actions';
 
@@ -24,7 +24,9 @@ class App extends Component {
       <div>
         <Header />
         <AsyncBar isWorking={this.props.isWorking} error={this.props.error} />
-          {this.props.children}
+          <div className='view-wrap'>
+            {this.props.children}
+          </div>
         <Footer />
       </div>
     );

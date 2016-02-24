@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import CompanyForm from '../components/CompanyForm';
+import CompanyForm from '../component/CompanyForm';
 import * as Actions from '../actions';
 
 class AddCompany extends Component {

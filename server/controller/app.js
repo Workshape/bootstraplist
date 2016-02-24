@@ -6,7 +6,7 @@ import { RouterContext, match } from 'react-router';
 import * as subscriptionService from '../api/service/subscription';
 import configureStore from '../../app/store';
 import routes from '../../app/routes';
-import DevTools from '../../app/containers/devTools';
+import DevTools from '../../app/view/devTools';
 
 const isDev = (process.env.NODE_ENV !== 'production');
 

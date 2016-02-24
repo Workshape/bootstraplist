@@ -4,7 +4,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { syncHistory, routeReducer } from 'react-router-redux';
-import DevTools from '../containers/devTools';
+import DevTools from '../view/devTools';
 import { persistState } from 'redux-devtools';
 
 import app from '../reducers';

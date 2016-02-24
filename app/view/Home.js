@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import CompaniesList from '../components/CompaniesList';
+import CompaniesList from '../component/CompaniesList';
 
-import SubscriptionForm from '../components/SubscriptionForm';
+import SubscriptionForm from '../component/SubscriptionForm';
 
 import * as Actions from '../actions';
 
 class Home extends Component {
+
   render() {
     return (
       <div className='view view-home'>
@@ -35,6 +36,9 @@ class Home extends Component {
 
           <h2>Companies</h2>
 
+          <br />
+          <br />
+
           <CompaniesList />
 
           </div>
@@ -50,6 +54,7 @@ class Home extends Component {
       </div>
     );
   }
+
 }
 
 /*

@@ -1,0 +1,3 @@
+Braintree is building products that make payments easier—so easy that they fade into the background, making entirely new kinds of interactions possible. The Braintree full-stack payment platform lets companies build their own experiences and then scale their businesses around the globe. 
+
+The company also in a unique position to greatly impact how merchants and customers interact. Recently acquired by PayPal, it is now in an even greater position to change the way people pay.

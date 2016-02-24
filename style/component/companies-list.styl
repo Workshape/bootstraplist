@@ -8,3 +8,24 @@ ul.companies-list
         width 20%
         padding 10px
         box-sizing border-box
+
+        &.submit a
+            display block
+            background color-accent
+            width 100%
+            padding-bottom 100%
+            position relative
+            transition background .2s
+
+            &:after
+                content '+'
+                font-size 100px
+                color color-white
+                font-weight 900
+                position absolute
+                left 50%
+                top 50%
+                transform translate(-50%, -50%)
+
+            &:hover
+                background color-accent-light

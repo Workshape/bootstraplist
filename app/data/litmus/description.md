@@ -1,0 +1,3 @@
+Litmus helps more than 250,000 marketers make email better. The web-based email creation, testing and analytics platform empowers marketers, designers and agencies to confidently deliver a superior subscriber experience. Litmus provides instant email previews and quality assurance tools across all major inbox providers, browsers, and devices, and features comprehensive analytics to help users quickly and easily build, test, troubleshoot and optimize every campaign. 
+
+Headquartered in Cambridge, Mass., with additional offices in London, Litmus has partnered with more than 250 major email service providers and agencies, including MailChimp, IBM Silverpop and BrightWave Marketing.

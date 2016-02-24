@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import SubscriptionForm from '../components/SubscriptionForm';
+import SubscriptionForm from '../component/SubscriptionForm';
 
 import * as Actions from '../actions';
 

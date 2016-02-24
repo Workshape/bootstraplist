@@ -5,7 +5,7 @@ import { Router, Route } from 'react-router';
 import routes from '../app/routes';
 import store from '../app/store';
 import * as actions from '../app/actions';
-import Root from '../app/containers/root';
+import Root from '../app/view/root';
 
 import { setupRealtime } from './Realtime';
 

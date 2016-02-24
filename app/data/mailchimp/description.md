@@ -1,0 +1,3 @@
+More than 3 million people in 200 countries use MailChimp to create, send, and track email newsletters. Whether you're self-employed, you manage projects for clients, or you work for a Fortune 500 company, MailChimp has features and integrations that will suit your email-marketing needs. 
+
+Create signup forms that match your brand's look and feel, and send your subscribers product updates, event invitations, announcements, and editorial content (just to name a few). Use our reports to improve your campaigns and learn more about your subscribers. Best of all? MailChimp is free for lists of up to 2,000 subscribers.

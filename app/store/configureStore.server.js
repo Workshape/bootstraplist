@@ -5,7 +5,7 @@ import { syncHistory, routeReducer } from 'react-router-redux';
 import { persistState } from 'redux-devtools';
 
 import app from '../reducers';
-import DevTools from '../containers/devTools';
+import DevTools from '../view/devTools';
 
 export default (req, initialState) => {
   const rootReducer = combineReducers({

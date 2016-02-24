@@ -1,0 +1,3 @@
+GitHub is how people build software. With a community of more than 10 million people, developers can discover, use and contribute to over 25 million projects using a powerful, collaborative workflow. 
+
+Whether using GitHub.com or your own instance of GitHub Enterprise, you can integrate GitHub with third party tools, from project management to continuous deployment, to build software in the way that works best for you.

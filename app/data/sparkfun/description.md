@@ -1,0 +1,3 @@
+SparkFun is building a world where technology is used as a creative medium by curious individuals of all ages. We are planting the seeds of inventorship in tomorrow’s creative minds through fun and supportive products that utilize the latest technologies in DIY electronics. We also offer hands-on workshops, free access to resources and information, and encourage rapid-prototyping best practices. Our customers and fans are prototyping engineers, students, hobbyists, educators, and members of the Maker community, all of whom share a love for creating with electronics.
+
+SparkFun is an online retailer, manufacturer and worldwide leader in Open Source Hardware (OSHW). Founded in 2003, it has grown to over 140 employees and 200 distributors worldwide.

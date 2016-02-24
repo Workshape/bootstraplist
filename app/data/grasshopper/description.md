@@ -1,0 +1,5 @@
+Sound more professional and stay connected with Grasshopper, the Virtual Phone System designed for entrepreneurs. Grasshopper works just like a traditional phone system, but requires no hardware to purchase or software to install - it's all managed online or by phone. Callers can reach you wherever you are - on your cell, in the office, or at home.
+
+Whether you're a freelancer or a growing small business with multiple employees, Grasshopper works for you. Get a toll free or local number and create extensions for all of your employees, regardless of where they're located. Forward calls, receive faxes, and get voicemails via email.
+
+Grasshopper puts the power of your Virtual Phone System right at your fingertips. With our easy online interface, you can set up your account, tag messages, view call reports, and more.
