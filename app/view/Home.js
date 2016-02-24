@@ -16,10 +16,12 @@ class Home extends Component {
         <section className='heading soil'>
           <div className='inner'>
 
+          <img className='head-logo' src='/assets/logos/bootstrap-list.svg' />
+
             <h1>The Bootstrap List</h1>
 
             <h2 className='sub'>
-              The BootstrapList proudly represents companies who are bootstrapping. 
+              The Bootstrap List proudly represents companies who are bootstrapping. 
               This is a resource for finding out about, and discovering, startups 
               who have plied their way off nothing but their own savings and revenue.
               <br />

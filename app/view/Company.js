@@ -32,6 +32,11 @@ export default class Company extends Component {
 
             <div dangerouslySetInnerHTML={{__html:company.description}} />
 
+            <br />
+            <br />
+
+            <a className='button' href={company.url} target='_blank'>View Website</a>
+
           </div>
         </section>
 
