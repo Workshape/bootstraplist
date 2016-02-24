@@ -26,7 +26,7 @@ class Home extends Component {
               <br />
               We wish to celebrate the accomplishments of the bootstrapped startup 
               and bring awareness to others of companies that operate in this manner. 
-              Will be accepting submissions to our list shortly.
+              We will be accepting submissions to our list shortly.
             </h2>
 
           </div>
