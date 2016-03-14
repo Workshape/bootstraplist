@@ -20,7 +20,7 @@ export function handleRender(req, res) {
   subscriptionService.getSubscriptions()
   .then(subscriptions => {
 
-    let initialState = { app: { subscriptionCount: subscriptions.length } };
+    let initialState = { app: { isWorking: false, subscriptionCount: subscriptions.length, error: null } };
 
     const store = configureStore(req, initialState);
 

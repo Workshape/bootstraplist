@@ -2,7 +2,7 @@
     "rethinkdb" : {
         "host" : "localhost",
         "port" : 28015,
-        "db"   : "pulse"
+        "db"   : "bootstrap"
     },
     "express" : {
         "host" : "localhost",

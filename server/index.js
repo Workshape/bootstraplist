@@ -16,6 +16,11 @@ import * as appController from './controller/app.js';
  *
  * Configures and starts Express server
  */
+process.on('uncaughtException', function (exception) {
+    console.log(' [x] Uncaught Exception:', exception);
+    console.log(exception.stack);
+    console.log(' [x] ------------------------------');
+});
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -34,6 +39,7 @@ app.use(bodyParser.json());
 
 // API Endpoints
 app.post('/api/0/subscriptions', api.addSubscription);
+app.post('/api/0/companies', api.addCompany);
 
 // Universal Application endpoint
 app.get('*', appController.handleRender);

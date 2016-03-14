@@ -21,7 +21,7 @@ new WebpackDevServer(webpack(webpackConfig), {
   headers            : { 'Access-Control-Allow-Origin': '*' },
   historyApiFallback : true,
   hot                : true,
-  noInfo             : false,
+  stats              : 'minimal',
   publicPath         : webpackConfig.output.publicPath,
   proxy              : {
     '*' : 'http://' + host + ':' + appPort

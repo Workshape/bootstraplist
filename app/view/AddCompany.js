@@ -7,9 +7,16 @@ import * as Actions from '../actions';
 
 class AddCompany extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      submitted: false
+    };
+  }
+
   onSubmit(company) {
+      this.props.onSubmit(company);
       this.setState({ submitted: true });
-      this.render();
   }
 
   render() {
@@ -46,7 +53,15 @@ class AddCompany extends Component {
   }
 
   getFormContent() {
-    if (this.state && this.state.submitted) {
+    if (this.props.isWorking) {
+      return <div className='box success'>One moment...</div>;
+    }
+
+    if (!this.props.isWorking && this.props.error) {
+      return <div className='box error'>Oh no! Something went wrong. Please try again.</div>;
+    }
+
+    if (!this.props.isWorking && this.state.submitted) {
       return <div className='box success'>Thank you</div>;
     }
 
@@ -59,6 +74,11 @@ class AddCompany extends Component {
  * Expose "Smart" Component that is connect-ed to Redux
  */
 export default connect(
-  state => ({}), 
-  dispatch => bindActionCreators(Actions, dispatch)
+  state => ({
+    isWorking : state.app.isWorking,
+    error     : state.app.error
+  }), 
+  dispatch => bindActionCreators({
+    onSubmit : Actions.addCompany
+  }, dispatch)
 )(AddCompany);

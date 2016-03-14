@@ -1,5 +1,7 @@
 import { 
-  ADD_SUBSCRIPTION_REQUEST, ADD_SUBSCRIPTION_SUCCESS, ADD_SUBSCRIPTION_FAILURE, INCREMENT_SUBSCRIPTION_COUNT
+  ADD_SUBSCRIPTION_REQUEST, ADD_SUBSCRIPTION_SUCCESS, ADD_SUBSCRIPTION_FAILURE,
+  ADD_COMPANY_REQUEST, ADD_COMPANY_SUCCESS, ADD_COMPANY_FAILURE,  
+  INCREMENT_SUBSCRIPTION_COUNT
 } from '../constants/ActionTypes';
 
 const initialState = {
@@ -29,7 +31,25 @@ export default (state = initialState, action)  => {
       return Object.assign({}, state, {
         isWorking: false,
         error: action.error,
-      }); 
+      });
+
+    case ADD_COMPANY_REQUEST:
+      return Object.assign({}, state, {
+        isWorking: true,
+        error: null
+      });
+
+    case ADD_COMPANY_SUCCESS:
+      return Object.assign({}, state, {
+        isWorking: false,
+        error: null
+      });
+
+    case ADD_COMPANY_FAILURE:
+      return Object.assign({}, state, {
+        isWorking: false,
+        error: action.error
+      });  
 
     case INCREMENT_SUBSCRIPTION_COUNT:
       return Object.assign({}, state, {
